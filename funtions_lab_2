@@ -1,0 +1,60 @@
+
+tasks = [
+    { "description": "Wash Dishes", "completed": False, "time_taken": 10 },
+    { "description": "Clean Windows", "completed": False, "time_taken": 15 },
+    { "description": "Make Dinner", "completed": True, "time_taken": 30 },
+    { "description": "Feed Cat", "completed": False, "time_taken": 5 },
+    { "description": "Walk Dog", "completed": True, "time_taken": 60 },
+]
+
+
+# 1. Print a list of uncompleted tasks
+
+completed_task = []
+
+for task in tasks:
+    if task["completed"] == False:
+        completed_task.append(task)
+print(completed_task)
+
+
+# 2. Print a list of completed tasks
+
+uncompleted_task = []
+
+for task in tasks:
+    if task["completed"] == True:
+        uncompleted_task.append(task)
+print(uncompleted_task)
+
+
+# 3. Print a list of all task descriptions
+
+task_description = []
+
+for task in tasks:
+    task_description.append(task["description"])
+print(task_description)
+
+
+# 4. Print a list of tasks where time_taken is at least a given time
+
+time_taken_less_than = []
+
+for task in tasks:
+    if task["time_taken"] <= 20:
+        time_taken_less_than.append(task)
+print(time_taken_less_than)
+
+
+
+# 5. Print any task with a given description
+
+def find_task_by_description(tasks, description):
+    task_description = None
+    for task in tasks:
+        if task["description"] == description:
+            task_description = task
+
+    return task_description
+print(find_task_by_description(tasks, "Feed Cat"))
